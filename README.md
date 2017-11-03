@@ -5,7 +5,7 @@ Conflict, Contact...
 
 ### ERD Diagram
 
-![ERD Diagram][https://github.com/yukitsuboniwa/project-3/blob/master/Project%203%20ERD%20.pngs]
+![ERD Diagram](https://github.com/yukitsuboniwa/project-3/blob/master/Project%203%20ERD%20.pngs)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
