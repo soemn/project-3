@@ -1,6 +1,6 @@
-# Conflict
 
-# README
+# Project 3 - Yuki, Min Soe, William ("Whats That!?")
+
 
 BEST Project 3 Conflict test!!! Test again
 
