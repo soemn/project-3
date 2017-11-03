@@ -1,6 +1,10 @@
-# Project 3 - Yuki, Min Soe, William ("Whats That!?")
 
 Conflict, Contact...
+
+# "Whats That!?" - Yuki, Soe Min, William
+
+BEST Project 3 Conflict test!!! Test again Hmm
+>>>>>>> 5f2819b68d6ef197d98387bc9bce073601e26453
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
