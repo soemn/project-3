@@ -1,6 +1,8 @@
-# Project 3 - Yuki, Min Soe, William "Whats That!?"
 
-BEST Project 3 EVER!!!
+# Project 3 - Yuki, Min Soe, William ("Whats That!?")
+
+
+BEST Project 3 Conflict test!!!
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
