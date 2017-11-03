@@ -1,6 +1,8 @@
 # "Whats That!?" - Yuki, Soe Min, William
 
-BEST Project 3 Conflict test!!! Test again Hmm
+### ERD Diagram
+
+![ERD Diagram](https://github.com/yukitsuboniwa/project-3/blob/master/Project%203%20ERD%20.png)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
