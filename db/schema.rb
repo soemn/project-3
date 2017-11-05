@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20171104084053) do
     t.string "email"
     t.string "password_digest"
     t.string "profile_picture"
-    t.string "slug"
     t.integer "spent_points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
