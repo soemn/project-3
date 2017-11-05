@@ -5,7 +5,6 @@
 ![ERD Diagram](https://github.com/yukitsuboniwa/project-3/blob/master/Project%203%20ERD%20.png)
 
 
-<<<<<<< HEAD
 ### Wireframes
 
 1. Homepage
@@ -14,9 +13,6 @@
 
 ![Photo](app/assets/images/photo.png)
 
-=======
-### Rollback
->>>>>>> 262e3ced4ed3cb438cb70e86a1b7a550df9f640c
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
