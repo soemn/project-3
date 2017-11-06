@@ -18,7 +18,7 @@ Whats That!? is a ...
 
 ### ERD Diagram
 
-![ERD Diagram](public/Project_3_ERD.png)
+![ERD Diagram](public/Project_3_ERDv2.png)
 
 
 ### Wireframes
