@@ -25,13 +25,13 @@ Whats That!? is a ...
 
 ![Homepage](public/homepage.png)
 
-![Homepage2](public/Main Page Wireframe.png)
+![Homepage2](public/Main_Page_Wireframe.png)
 
 ![Photo](public/photo.png)
 
-![Maximize Photo](public/Maximized Photo Popup.png)
+![Maximize Photo](public/Maximized_Photo_Popup.png)
 
-![Profile](public/Profile Page Wireframe.png)
+![Profile](public/Profile_Page_Wireframe.png)
 
 ### Application Setup
 
