@@ -4,15 +4,17 @@ Whats That!? is a ...
 
 ### User Stories
 
-* User can upload photos, with title, description, and tag brands on their photo
+* **User can upload photos**, with title, description, and tag brands on their photo
 * User can like and comment on other user's photos
 * User can follow other users
-* User can earn points from uploaded photos
+* **User can earn points from uploaded photos**
 * User can see how many points each photo earn them and their total available points
 * User can spend points at the store, discounts or actual items
-* Each photo will link to the brands displayed in the photos
+* **Each photo will link to the brands displayed in the photos**
 * User can search photos by brand and other users
 
+#### Brand creation
+* Brand registry
 
 ### ERD Diagram
 
@@ -37,10 +39,12 @@ Whats That!? is a ...
 
 Install dependencies
 ```
-Bundle Install
+bundle Install
 ```
 Set up Database
 ```
 rails db:create
 rails db:migrate
 ```
+
+### Inspiration
