@@ -2,16 +2,16 @@
 
 ### ERD Diagram
 
-![ERD Diagram](https://github.com/yukitsuboniwa/project-3/blob/master/Project%203%20ERD%20.png)
+![ERD Diagram](public/Project_3_ERD.png)
 
 
 ### Wireframes
 
 1. Homepage
 
-![Homepage](app/assets/images/homepage.png)
+![Homepage](public/homepage.png)
 
-![Photo](app/assets/images/photo.png)
+![Photo](public/photo.png)
 
 
 This README would normally document whatever steps are necessary to get the
