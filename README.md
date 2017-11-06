@@ -20,6 +20,54 @@ Whats That!? is a ...
 
 ![ERD Diagram](public/Project_3_ERDv2.png)
 
+### Routes and Views
+
+**Pages**
+- homepage
+- profile
+- login
+- register
+- upload photo
+- store (to spend points)
+
+#### Not logged in
+**welcome controller**
+- Homepage (shows featured photos)
+  - **photos**
+    - **GET** When photo is clicked (on homepage/profile page), pop up larger image with links, messages, likes
+
+**user Controller**
+- **GET** (new) Login --> log in-ed Homepage
+- **POST** (create) Register --> log in-ed Homepage
+- **GET** (index) Profile --> see others profile, list all **photos** of that profile
+
+#### Logged in
+**welcome controller**
+
+*  Homepage (show followed photos)
+
+  - **photos**
+    - GET When photo is clicked (on homepage/profile page), pop up larger image with links, messages, likes
+  - **messages**
+    - POST (create) Message
+
+**users Controller**
+- **PATCH** (update) Edit Profile page --> Update profile photo, change password, change email
+
+**profile Controller**
+* If personal
+  - Profile --> if personal, see all points earned, edit details
+  - **photos**
+    - **POST** (create) Upload --> create an upload
+    - **GET** When photo is clicked (on homepage/profile page), pop up larger image with links, messages, likes
+    - **DELETE** (destroy) button to delete an upload
+  - messages
+    - POST (create) Message
+* Else if other's profile
+  - **photos**
+    - **GET** When photo is clicked (on homepage/profile page), pop up larger image with links, messages, likes
+  - **messages**
+    - **POST** (create) Message
 
 ### Wireframes
 
