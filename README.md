@@ -24,10 +24,12 @@ Whats That!? is a ...
 
 **Pages**
 - homepage
-- profile
-- login
-- register
-- upload photo
+- profile pages (users, brands)
+- Devise pages
+  - login
+  - register
+  - edit email, password
+- upload page
 - store (to spend points)
 
 #### Not logged in
@@ -94,5 +96,3 @@ Set up Database
 rails db:create
 rails db:migrate
 ```
-
-### Inspiration
