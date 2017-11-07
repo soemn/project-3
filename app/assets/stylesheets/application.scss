@@ -3,18 +3,25 @@
 
 body {
   font-family: 'Fira Sans', sans-serif;
-  background-color: #FDFFFC;
-  color: #011627;
+  background-color: #FFE066;
+  color: #50514F;
 }
 
-.navbar.navbar-expand-lg.navbar-light.bg-light {
+.navbar.navbar-expand-lg {
   font-family: 'Roboto', sans-serif;
-  background-color: #FF9F1C;
-  color: #011627;
+  background-color: #F25F5C;
+  color: #50514F;
 }
 
 .navbar a {
   font-family: 'Roboto', sans-serif;
-  color: #011627;
+  color: #50514F;
   font-weight: bold;
+}
+
+.btn-outline-success {
+    color: #50514F;
+    background-color: transparent;
+    background-image: none;
+    border-color: #50514F;
 }
