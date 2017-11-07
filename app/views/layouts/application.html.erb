@@ -8,6 +8,7 @@
   </head>
 
   <body>
+
     <nav class="navbar navbar-expand-lg">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -16,10 +17,11 @@
         <a class="navbar-brand" href="/">What's That?!</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" href="Register">Register<span class="sr-only">(current)</span></a>
+            <a class="nav-link"><%= link_to "Register", new_user_registration_path %>
+              <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Login">Login</a>
+            <a class="nav-link"><%= link_to "Login", new_user_session_path %></a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
