@@ -20,32 +20,56 @@ Whats That!? is a ...
 
 ![ERD Diagram](public/Project_3_ERDv2.png)
 
-### Routes and Views
+-**
+
+### Views
 
 **Pages**
 - homepage
-- profile
-- login
-- register
-- upload photo
+- profile pages (users, brands)
+- Devise pages
+  - login
+  - register
+  - edit email, password
+- upload page
 - store (to spend points)
 
-#### Not logged in
+-**
+
+### Controllers
+
+1. **welcome controller**
+2. **photos controller**
+3. **messages controller**
+4. **rewards controller**
+5. **followers controller**
+6. **users controller** <-- using devise
+
+-**
+
+#### When user is NOT Logged In
 **welcome controller**
 - Homepage (shows featured photos)
+
+**photos controller**
   - **photos**
     - **GET** When photo is clicked (on homepage/profile page), pop up larger image with links, messages, likes
 
-**user Controller**
+**messages controller**
+  - **messages**
+    - **GET** show messages
+
+**rewards controller**
+  - **GET** view rewards
+
+**devise**
 - **GET** (new) Login --> log in-ed Homepage
 - **POST** (create) Register --> log in-ed Homepage
 - **GET** (index) Profile --> see others profile, list all **photos** of that profile
 
-#### Logged in
+#### When user IS Logged In
 **welcome controller**
-
 *  Homepage (show followed photos)
-
   - **photos**
     - GET When photo is clicked (on homepage/profile page), pop up larger image with links, messages, likes
   - **messages**
@@ -94,5 +118,3 @@ Set up Database
 rails db:create
 rails db:migrate
 ```
-
-### Inspiration
