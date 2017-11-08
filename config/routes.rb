@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   # get 'welcome/index'
   root 'welcome#index'
+
+  resources :photos
   # login and register routes ------------------------------------
   # get 'users/new'
   # get 'register' => 'registrations#create'

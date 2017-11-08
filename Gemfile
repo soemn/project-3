@@ -49,6 +49,8 @@ gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
 #install popper for bootstrap
 gem 'popper_js', '~> 1.12.3'
+#forms
+gem 'bootstrap_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
