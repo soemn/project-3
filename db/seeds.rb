@@ -22,16 +22,24 @@ end
 5.times do
   Brand.create(
     name: Faker::Pokemon.name,
-    logo: %w[nike adidas puma].sample,
+    logo: %w(nike adidas puma).sample,
     link: 'https://store.nike.com/sg/en_gb/pw/new-mens/meZ7pu'
   )
 end
+
+photo_array = [
+  'https://www.thenational.ae/image/policy:1.208767:1499316145/image/jpeg.jpg?f=16x9&w=1024&$p$f$w=2589da4', 'https://i.pinimg.com/736x/2e/e2/4f/2ee24f990d394ab4762900b9a66e5c6c--adidas-mens-clothing-adidas-outfits-men.jpg',
+  'http://www3.pictures.zimbio.com/bg/Kendall+Jenner+Celebrity+Social+Media+Pics+39cT5k6XvhNl.jpg',
+  'http://us.hellomagazine.com/images/stories/1/2016/08/25/000/224/399/gallery_1_1.jpg',
+  'http://celebmafia.com/wp-content/uploads/2017/02/emily-ratajkowski-pics-celebrity-social-media-2-23-2017-1.jpg',
+  'https://assets.pcmag.com/media/images/515140-celebrity-endorsement-social-media-fails.png?thumb=y&width=694&height=694&boxFit=y'
+]
 
 5.times do
   Photo.create(
     title: Faker::LordOfTheRings.character,
     description: Faker::LordOfTheRings.location,
-    photo_link: 'https://i.pinimg.com/736x/2e/e2/4f/2ee24f990d394ab4762900b9a66e5c6c--adidas-mens-clothing-adidas-outfits-men.jpg',
+    photo_link: photo_array.sample,
     user_id: User.all.sample.id,
     brand_id: Brand.all.sample.id,
     points: [*0..100].sample
