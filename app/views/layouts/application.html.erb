@@ -15,26 +15,37 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <a class="navbar-brand" href="/">What's That?!</a>
+
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <%= link_to "Register", new_user_registration_path, :class=>"nav-link"%>
-            <span class="sr-only">(current)</span>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, :class=>"nav-link" %>
-          </a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
+          <% unless user_signed_in? %>
+            <li class="nav-item active">
+              <%= link_to "Register", new_user_registration_path, :class=>"nav-link"%>
+              <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, :class=>"nav-link" %>
+            </li>
+          <% else %>
+            <li class="nav-item active">
+              <%= link_to "Edit Profile", current_user.email, :class=>"nav-link" %>
+              <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class=>"nav-link" %>
+            </li>
+          <% end %>
+        </ul>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
 
-  <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-</html>
+    <%= yield %>
+
+  </html>

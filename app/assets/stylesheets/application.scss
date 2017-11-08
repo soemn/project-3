@@ -1,5 +1,5 @@
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,900');
 
 body {
   font-family: 'Fira Sans', sans-serif;
@@ -11,12 +11,12 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: #F25F5C;
   color: #50514F;
+  font-weight: 600;
 }
 
 .navbar a {
   font-family: 'Roboto', sans-serif;
   color: #50514F;
-  font-weight: bold;
 }
 
 .btn-outline-success {
@@ -24,4 +24,8 @@ body {
     background-color: transparent;
     background-image: none;
     border-color: #50514F;
+}
+
+.card {
+  background-color: #70C1B3;
 }
