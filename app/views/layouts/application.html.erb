@@ -27,8 +27,8 @@
             </li>
           <% else %>
             <li class="nav-item">
-            <a href="/profile/edit"><%= current_user.email %></a>
-          </li> &nbsp;
+              <a href="/profile/edit"><%= current_user.email %></a>
+            </li>
             <li>
               <%= link_to "Logout", destroy_user_session_path, method: :delete %>
             </li>
