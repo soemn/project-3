@@ -11,8 +11,6 @@ Photo.destroy_all
 Brand.destroy_all
 User.destroy_all
 
-photos_array
-
 5.times do
   User.create(
     name: Faker::WorldOfWarcraft.hero,
@@ -24,7 +22,7 @@ end
 5.times do
   Brand.create(
     name: Faker::Pokemon.name,
-    logo: %w(nike adidas puma).sample,
+    logo: %w[nike adidas puma].sample,
     link: 'https://store.nike.com/sg/en_gb/pw/new-mens/meZ7pu'
   )
 end
