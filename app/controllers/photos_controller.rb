@@ -15,7 +15,7 @@ class PhotosController < ApplicationController
 
   def create
     image_link = params[:image]
-    image = image_link[37..60]
+    image = image_link[25..60]
 
     current_user.photos.create(
       title: params[:photo][:title],
