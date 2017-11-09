@@ -10,7 +10,7 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find(params[:id])
 
-    render json: @photo
+    # render json: @photo
   end
 
   def create
