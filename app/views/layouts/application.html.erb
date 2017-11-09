@@ -26,12 +26,24 @@
               <%= link_to "Login", new_user_session_path, :class=>"nav-link" %>
             </li>
           <% else %>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="/profile/edit"><%= current_user.email %></a>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
               <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-            </li>
+            </li> -->
+
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= current_user.email %>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <%= link_to "Edit Profile",  edit_user_registration_path, :class=>"dropdown-item" %>
+                <%= link_to "My Photos",  photos_path, :class=>"dropdown-item" %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class=>"dropdown-item" %>
+              </div>
+            </div>
+
             <% end %>
         </ul>
 

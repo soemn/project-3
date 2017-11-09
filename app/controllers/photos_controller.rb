@@ -1,8 +1,8 @@
 class PhotosController < ApplicationController
   def index
-    @photos = Photo.all
-
-    render json: @photos
+    @photos = current_user.photos
+    # @photos = Photo.all
+    # render json: @photos
   end
 
   def show
