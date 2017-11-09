@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :authenticate_user!, only: :index
+  before_action :authenticate_user!, only: %i[new index]
 
   def index
     @photos = current_user.photos
@@ -14,18 +14,16 @@ class PhotosController < ApplicationController
   end
 
   def create
-    # find current_user first
-    # create new project based on that user
-    # current_user.photos.create(params.require(:photo).permit(:title, :description, :photo_link))
+    image_link = params[:image]
+    image = image_link[25..60]
 
-    # uploaded_file = params[:image]
-    # params[:person][:picture].path
-    # render json: uploaded_file
-    # cloudnary_file = Cloudinary::Uploader.upload(uploaded_file)
-    # render params[:image]
-    #
+    current_user.photos.create(
+      title: params[:photo][:title],
+      description: params[:photo][:description],
+      photo_link: image
+    )
+
     render json: params
-    # redirect_to root_path
   end
 
   def new

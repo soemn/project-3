@@ -2,8 +2,13 @@
 	<%= bootstrap_form_for @new_photo do |f| %>
 		<%= f.text_field :title %>
 		<%= f.text_field :description %>
-		<%= f.file_field :photo_link %>
-		<a href="#" id="upload_widget_opener">Upload multiple images</a>
-		<%= f.submit("Upload Image", class: 'btn') %>
+		<a href="#" id="upload_widget_opener"></a>
+		<br>
+		<br>
+		<%= f.submit("Submit") %>
 	<% end %>
+
 </div>
+
+
+<!-- <%= cl_image_tag("kn5xdvgqzmgtptwbyaix.jpg") %> -->
