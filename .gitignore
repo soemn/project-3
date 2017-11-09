@@ -19,3 +19,4 @@
 .byebug_history
 schema.rb
 cloudinary.yml
+application.yml
