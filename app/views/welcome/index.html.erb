@@ -5,9 +5,9 @@
       <div class='col-lg-4 col-sm-6'>
         <div class="card">
 
-          <a href="<%= f.id %>"><img class="card-img-top" src="<%= f.photo_link %>" alt="<%= f.title %>"></a>
-          <!-- <img class="card-img-top" src="" alt="<%= f.title %>"> -->
-          <%= cl_image_tag(f.photo_link) %>
+          <a href="<%= photo_path(f) %>"><img class="card-img-top" src="<%= f.photo_link %>" alt="<%= f.title %>"></a>
+          <!-- <img class="card-img-top" src="" alt="<%= f.title %>">
+          <%= cl_image_tag(f.photo_link) %> -->
 
           <div class="card-body">
             <h4 class="card-title">
@@ -23,3 +23,4 @@
       </div>
     <% end %>
   </div>
+</div>
