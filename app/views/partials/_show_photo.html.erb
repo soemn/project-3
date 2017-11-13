@@ -1,0 +1,12 @@
+<div class='col-lg-4 col-sm-6'>
+  <div class="card">
+  <%= cl_image_tag @photo.photo_link, height: "200px" %>
+    <div class="card-body">
+        <h4 class="card-title">
+          <%= @photo.title %>
+        </h4>
+          <p class="card-text"><%= @photo.description %></p>
+      </div>
+      <%= render "./partials/show_points" %>
+    </div>
+</div>
