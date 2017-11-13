@@ -4,11 +4,7 @@
     <% @photos.each do |f| %>
       <div class='col-lg-4 col-sm-6'>
         <div class="card">
-
-          <a href="<%= f.id %>"><img class="card-img-top" src="<%= f.photo_link %>" alt="<%= f.title %>"></a>
-          <!-- <img class="card-img-top" src="" alt="<%= f.title %>"> -->
-          <%= cl_image_tag(f.photo_link) %>
-
+          <%= cl_image_tag f.photo_link, class:"card-img-top" %>
           <div class="card-body">
             <h4 class="card-title">
               <%= f.title %>
