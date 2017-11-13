@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108031726) do
+ActiveRecord::Schema.define(version: 20171113030537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,15 +23,15 @@ ActiveRecord::Schema.define(version: 20171108031726) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "messages", force: :cascade do |t|
+  create_table "interactions", force: :cascade do |t|
     t.text "content"
     t.integer "message_type"
     t.bigint "user_id"
     t.bigint "photo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["photo_id"], name: "index_messages_on_photo_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
+    t.index ["photo_id"], name: "index_interactions_on_photo_id"
+    t.index ["user_id"], name: "index_interactions_on_user_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -69,8 +69,8 @@ ActiveRecord::Schema.define(version: 20171108031726) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "messages", "photos"
-  add_foreign_key "messages", "users"
+  add_foreign_key "interactions", "photos"
+  add_foreign_key "interactions", "users"
   add_foreign_key "photos", "brands"
   add_foreign_key "photos", "users"
 end

@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Message.destroy_all
+Interaction.destroy_all
 Photo.destroy_all
 Brand.destroy_all
 User.destroy_all
@@ -47,7 +47,7 @@ photo_array = [
 end
 
 10.times do
-  Message.create(
+  Interaction.create(
     content: Faker::WorldOfWarcraft.quote,
     message_type: [0, 1].sample,
     user_id: User.all.sample.id,
