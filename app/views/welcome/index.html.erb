@@ -5,7 +5,8 @@
       <div class='col-lg-4 col-sm-6'>
         <div class="card">
 
-          <a href="<%= photo_path(f) %>"><img class="card-img-top" src="<%= f.photo_link %>" alt="<%= f.title %>"></a>
+          <a href="<%= photo_path(f) %>"><%= cl_image_tag(f.photo_link, class:"card-img-top") %></a>
+          <!-- <a href="<%= photo_path(f) %>"><img class="card-img-top" src="<%= f.photo_link %>" alt="<%= f.title %>"></a> -->
           <!-- <img class="card-img-top" src="" alt="<%= f.title %>">
           <%= cl_image_tag(f.photo_link) %> -->
 
