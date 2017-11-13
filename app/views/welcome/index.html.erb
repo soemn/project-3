@@ -1,27 +1,5 @@
 <div class="container">
 
-  <div class="card-deck">
-    <% @photos.each do |f| %>
-      <div class='col-lg-4 col-sm-6'>
-        <div class="card">
+<%= render "./partials/show_all_photos" %>
 
-          <a href="<%= photo_path(f) %>"><%= cl_image_tag(f.photo_link, class:"card-img-top") %></a>
-          <!-- <a href="<%= photo_path(f) %>"><img class="card-img-top" src="<%= f.photo_link %>" alt="<%= f.title %>"></a> -->
-          <!-- <img class="card-img-top" src="" alt="<%= f.title %>">
-          <%= cl_image_tag(f.photo_link) %> -->
-
-          <div class="card-body">
-            <h4 class="card-title">
-              <%= f.title %>
-            </h4>
-            <p class="card-text"><%= f.description %></p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last Updated:
-              <%= f.updated_at %></small>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
 </div>
