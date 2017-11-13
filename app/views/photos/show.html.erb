@@ -1,6 +1,15 @@
 <div class="container">
-    <h1>Photo Page</h1>
 
-    <%= render "./partials/show_photo" %>
+  <h1>Photo Page</h1>
+
+  <div class="row">
+    <div class="col-5">
+      <%= render "./partials/show_photo" %>
+    </div>
+
+    <div class="col-7">
+      <%= render "./partials/show_interactions", @interaction => @interaction %>
+    </div>
+  </div>
 
 </div>

@@ -9,7 +9,7 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
-
+    @interaction = Interaction.find(params[:id])
     # render json: @photo
   end
 
