@@ -1,5 +1,6 @@
-
-<%= @interaction.content %>  <%= @interaction.message_type %>
+<% @interactions.each do |i| %>
+<%= i.content %>  <%= i.message_type %>
+<% end %>
 
 <form class="form-inline my-2 my-lg-0">
   <input class="form-control mr-sm-2" type="comment" placeholder="Add Comment" aria-label="Comment">

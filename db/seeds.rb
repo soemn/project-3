@@ -22,7 +22,7 @@ end
 10.times do
   Brand.create(
     name: Faker::Pokemon.name,
-    logo: %w[nike adidas puma].sample,
+    logo: %w(nike adidas puma).sample,
     link: 'https://store.nike.com/sg/en_gb/pw/new-mens/meZ7pu'
   )
 end
