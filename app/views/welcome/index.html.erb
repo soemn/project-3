@@ -1,21 +1,4 @@
-<div class="container">
+<div class="container-fluid">
 
-  <div class="card-deck">
-    <% @photos.each do |f| %>
-      <div class='col-lg-4 col-sm-6'>
-        <div class="card">
-          <%= cl_image_tag f.photo_link, class:"card-img-top" %>
-          <div class="card-body">
-            <h4 class="card-title">
-              <%= f.title %>
-            </h4>
-            <p class="card-text"><%= f.description %></p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last Updated:
-              <%= f.updated_at %></small>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <%= render "./partials/show_all_photos_without_points" %>
+</div>

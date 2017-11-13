@@ -1,30 +1,6 @@
-<h1>My Photos</h1>
+  <div class="container">
+      <h1>My Photos</h1>
 
-    <!-- <ul>
-      <% @photos.each do |photo| %>
-      <li>
-        <%= photo.title %>
-      </li>
-      <% end %>
-    </ul> -->
+      <%= render "./partials/show_all_photos_with_points" %>
 
-    <div class="container">
-      <div class="card-deck">
-        <% @photos.each do |f| %>
-          <div class='col-lg-4 col-sm-6'>
-            <div class="card">
-              <img class="card-img-top" src="<%= f.photo_link %>" alt="<%= f.title %>">
-              <div class="card-body">
-                <h4 class="card-title">
-                  <%= f.title %>
-                </h4>
-                <p class="card-text"><%= f.description %></p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Last Updated:
-                  <%= f.updated_at %></small>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
+  </div>

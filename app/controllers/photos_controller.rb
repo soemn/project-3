@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :authenticate_user!, only: %i[new index]
+  before_action :authenticate_user!, only: %i(new index)
 
   def index
     @photos = current_user.photos
@@ -9,8 +9,8 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
-
-    render json: @photo
+    @interactions = Interaction.where(user_id: params[:id])
+    # render json: @photo
   end
 
   def create
@@ -23,7 +23,7 @@ class PhotosController < ApplicationController
       photo_link: image
     )
 
-    render json: params
+    # render json: params
   end
 
   def new
