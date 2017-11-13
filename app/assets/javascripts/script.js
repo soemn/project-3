@@ -5,7 +5,8 @@ $(function() {
       upload_preset: "qd6agr0o",
       cropping: "server",
       folder: "user_photos",
-      sources: [ 'local', 'url', 'instagram']
+      sources: ["local", "url", "instagram"],
+      button_caption: "Select Image"
     },
     function(error, result) {
       console.log(error, result)
