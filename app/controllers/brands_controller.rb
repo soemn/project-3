@@ -10,12 +10,16 @@ class BrandsController < ApplicationController
   end
 
   def create
-    Brand.create(
+    @brand = Brand.create(
       name: params[:brand][:name],
       logo: params[:brand][:logo],
       link: params[:brand][:link]
     )
-    redirect_to brands_path
+    if @brand.save
+      redirect_to brands_path
+    else
+      redirect_to new_brand_path
+  end
   end
 
   def show
