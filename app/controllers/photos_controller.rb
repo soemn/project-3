@@ -23,10 +23,16 @@ class PhotosController < ApplicationController
       photo_link: image
     )
 
+    current_user.interactions.create(
+      content: params[:interaction][:content],
+      message_type: params[:interaction][:message_type]
+    )
     # render json: params
   end
 
   def new
     @new_photo = Photo.new
+
+    @new_interaction = Interaction.new
   end
 end
