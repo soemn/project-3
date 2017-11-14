@@ -7,14 +7,15 @@ class BrandsController < ApplicationController
 
   def is_admin?
     redirect_to root_path if current_user.admin != true
-end
+  end
 
   def create
-    current_user.brands.create(
+    Brand.create(
       name: params[:brand][:name],
       logo: params[:brand][:logo],
       link: params[:brand][:link]
     )
+    redirect_to brands_path
   end
 
   def show

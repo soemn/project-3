@@ -20,10 +20,10 @@
           <span class="sr-only">(current)</span>
         </li>
         <li class="nav-item active">
-        <% if current_user.admin %>
-          <%= link_to "Create Brands", new_brand_path, :class=>"nav-link" %>
-          <span class="sr-only">(current)</span>
-        <% end %>
+          <% if current_user.admin %>
+            <%= link_to "Create Brands", new_brand_path, :class=>"nav-link" %>
+            <span class="sr-only">(current)</span>
+          <% end %>
         </li>
 
         <div class="dropdown">
