@@ -25,12 +25,12 @@
             <%= current_user.email %>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <% if current_user.admin %>
+              <%= link_to "Create Brands", brands_path, :class=>"dropdown-item" %>
+            <% end %>
             <%= link_to "Edit Profile", edit_user_registration_path, :class=>"dropdown-item" %>
             <%= link_to "My Photos", photos_path, :class=>"dropdown-item" %>
             <%= link_to "Logout", destroy_user_session_path, method: :delete, :class=>"dropdown-item" %>
-            <% if current_user.admin %>
-              <%= link_to "Brands", brands_path, :class=>"dropdown-item" %>
-            <% end %>
           </div>
         </div>
 
