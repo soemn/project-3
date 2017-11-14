@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :interactions
 
   resources :brands
+
+  get '/test', to: 'brands#test'
 end

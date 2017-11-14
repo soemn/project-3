@@ -19,11 +19,11 @@ User.destroy_all
   )
 end
 
-3.times do
+1.times do
   Brand.create(
     name: Faker::Pokemon.name,
-    logo: %w(nike adidas puma).sample,
-    link: 'https://store.nike.com/sg/en_gb/pw/new-mens/meZ7pu'
+    logo: 'Adidas',
+    link: 'http://shop.adidas.com.sg/'
   )
 end
 

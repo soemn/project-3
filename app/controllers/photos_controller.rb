@@ -1,5 +1,7 @@
+require 'google/cloud/vision'
+
 class PhotosController < ApplicationController
-  before_action :authenticate_user!, only: %i(new index)
+  before_action :authenticate_user!, only: %i[new index]
 
   def index
     @photos = current_user.photos
@@ -15,18 +17,37 @@ class PhotosController < ApplicationController
 
   def create
     image_link = params[:image]
-    image = image_link[25..60]
+    image_short_name = image_link[25..60]
+
+    image_long_name = 'http://res.cloudinary.com/dnqgbyfhs/image/upload/v1510589603/' + image_short_name
+
+    vision = Google::Cloud::Vision.new(
+      project: 'distributed-amp-185915',
+      keyfile: '83623-fc8c5d0cb28d.json'
+    )
+
+    image = vision.image image_long_name
+
+    result = {}
+
+    image.logos.each do |logo|
+      result = logo.description
+    end
+
+    brand = Brand.find_by logo: result
+    brand_id = brand.id
 
     current_user.photos.create(
       title: params[:photo][:title],
       description: params[:photo][:description],
-      photo_link: image
+      brand_id: brand_id,
+      photo_link: image_short_name
     )
 
-    current_user.interactions.create(
-      content: params[:interaction][:content],
-      message_type: params[:interaction][:message_type]
-    )
+    # current_user.interactions.create(
+    #   content: params[:interaction][:content],
+    #   message_type: params[:interaction][:message_type]
+    # )
     # render json: params
   end
 
