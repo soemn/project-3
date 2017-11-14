@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :photos
 
   resources :interactions
+
+  resources :brands
 end
