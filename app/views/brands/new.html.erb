@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Submit Brands</h1>
+  <%= bootstrap_form_for @new_brand do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :link %>
+  <a href="#" id="upload_widget_opener"></a>
+  <br>
+  <br>
+  <%= f.submit("Submit") %>
+<% end %>
+
+</div>
