@@ -2,8 +2,7 @@ class BrandsController < ApplicationController
   before_action :is_admin?, only: [:index]
 
   def index
-    @brands = Photo.all
-    # render json: @photos
+    @brands = Photo.where(brand_id: params[:id])
   end
 
   def is_admin?
@@ -11,10 +10,18 @@ class BrandsController < ApplicationController
 end
 
   def create
-    current_user.interactions.create(
+    current_user.brands.create(
       name: params[:brand][:name],
       logo: params[:brand][:logo],
       link: params[:brand][:link]
     )
+  end
+
+  def show
+    @brand = Photo.where(brand_id: params[:id])
+  end
+
+  def new
+    @new_brand = Brand.new
   end
 end
