@@ -22,8 +22,8 @@ class PhotosController < ApplicationController
     image_long_name = 'http://res.cloudinary.com/dnqgbyfhs/image/upload/v1510589603/' + image_short_name
 
     vision = Google::Cloud::Vision.new(
-      project: 'distributed-amp-185915',
-      keyfile: '83623-fc8c5d0cb28d.json'
+      project: ENV['project_name'],
+      keyfile: ENV['credentials']
     )
 
     image = vision.image image_long_name
