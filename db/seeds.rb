@@ -23,7 +23,7 @@ end
   Brand.create(
     name: Faker::Pokemon.name,
     logo: 'Adidas',
-    link: 'http://shop.adidas.com.sg/'
+    link: 'Test'
   )
 end
 
@@ -46,7 +46,7 @@ photo_array = [
   )
 end
 
-50.times do
+10.times do
   Interaction.create(
     content: Faker::WorldOfWarcraft.quote,
     message_type: [0, 1].sample,

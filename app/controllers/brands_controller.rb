@@ -39,9 +39,7 @@ class BrandsController < ApplicationController
   end
 
   def test
-
     image = "https://cdn.runrepeat.com/i/new-balance/1951/new-balance-1340v2-new-balance-men-s-running-shoes-silver-blue-silver-blue-7e4b-600.jpg"
-
 
     response = JSON.parse(get_brand(image).body)
 

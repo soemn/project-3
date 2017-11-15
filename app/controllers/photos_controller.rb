@@ -12,7 +12,8 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find(params[:id])
     @photo_id = params[:id]
-    @interactions = Interaction.where(photo_id: params[:id])
+    @interactions = Interaction.where(["photo_id = ? and message_type = ?", params[:id], 0])
+
     @new_interaction = Interaction.new
   end
 
@@ -58,7 +59,6 @@ class PhotosController < ApplicationController
   def show_profile
     @photos = Photo.where(user_id: params[:id])
     @photo_owner = User.find(params[:id])
-    # render json: @photo
   end
 
   protected

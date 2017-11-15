@@ -11,10 +11,9 @@ Rails.application.routes.draw do
   get '/user/:id', to: 'photos#show_profile', as: 'users'
 
   post '/interactions/new', to: 'interactions#create'
+  post '/interactions/like', to: 'interactions#like'
 
   resources :photos
-
-  # resources :interactions
 
   resources :brands
 

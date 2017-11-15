@@ -1,18 +1,24 @@
-<% @interactions.each do |i| %>
-<div>
-Content: <%= i.content %>
-</div>
-<div>
-Type: <%= i.message_type %>
-</div>
-<div >
-User: <%= i.user_id %>
-</div>
+<%= bootstrap_form_for @new_interaction, :url => interactions_like_path, :html => {:method => :post} do |f| %>
+  <%= f.hidden_field :message_type, :value => 1 %>
+  <%= f.hidden_field :photo_id, :value => @photo_id %>
+  <%= f.submit("Like") %>
 <% end %>
 
+<% @interactions.each do |i| %>
+  <div>
+    Content: <%= i.content %>
+  </div>
+  <div>
+    Type: <%= i.message_type %>
+  </div>
+  <div >
+    User: <%= i.user_id %>
+  </div>
+<% end %>
 
+<br>
 <%= bootstrap_form_for @new_interaction, :url => interactions_new_path, :html => {:method => :post} do |f| %>
-  <%= f.text_field :content %>
+  <%= f.text_field :content %>:
   <%= f.hidden_field :message_type, :value => 0 %>
   <%= f.hidden_field :photo_id, :value => @photo_id %>
   <%= f.submit("Submit") %>
