@@ -1,4 +1,4 @@
-require 'google/cloud/vision'
+# require 'google/cloud/vision'
 
 class PhotosController < ApplicationController
   before_action :authenticate_user!, only: %i[new index]
@@ -11,8 +11,9 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
-    @interactions = Interaction.where(user_id: params[:id])
-    # render json: @photo
+    @interactions = Interaction.where(photo_id: params[:id])
+    @photo_id = params[:id]
+    @new_interaction = Interaction.new
   end
 
   def create
@@ -24,7 +25,12 @@ class PhotosController < ApplicationController
     response = JSON.parse(get_brand(image_long_name).body)['responses'][0]['logoAnnotations'][0]['description']
 
     brand = Brand.find_by logo: response
-    brand_id = brand.id
+
+    if brand
+      brand_id = brand.id
+    else
+      brand_id = nil
+    end
 
     @new_photo = current_user.photos.create(
       title: params[:photo][:title],
@@ -47,12 +53,16 @@ class PhotosController < ApplicationController
 
   def new
     @new_photo = Photo.new
-
-    # @new_interaction = Interaction.new
   end
 
   def new_interaction
-    @new_interaction = Interaction.new
+
+    current_user.interactions.create(
+      content: params[:interaction][:content],
+      message_type: params[:interaction][:message_type],
+
+    )
+    # render json: params
   end
 
   def show_profile

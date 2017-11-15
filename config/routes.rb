@@ -10,11 +10,17 @@ Rails.application.routes.draw do
 
   get '/user/:id', to: 'photos#show_profile', as: 'users'
 
+  # get '/photo/:id', to: 'photos#new_interaction'
+  # post '/photo/:id', to: 'photos#new_interaction'
+  post '/interactions/new', to: 'photos#new_interaction'
+
   resources :photos
 
   # resources :interactions
 
   resources :brands
+
+  resources :rewards
 
   get '/test', to: 'brands#test'
 end
