@@ -3,6 +3,11 @@
     <div class="card-body">
         <h4 class="card-title">
           <%= @photo.title %>
+          <small>
+            (created by:
+            <%= link_to(@photo.user.name, users_path(@photo.user)) %>
+            )
+          </small>
         </h4>
           <p class="card-text"><%= @photo.description %></p>
           <p class="card-text">Points : <%= @photo.points %></p>

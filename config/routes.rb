@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # get 'welcome/index'
   root 'welcome#index'
 
+  get '/user/:id', to: 'photos#show_profile', as: 'users'
+
   resources :photos
 
   resources :interactions

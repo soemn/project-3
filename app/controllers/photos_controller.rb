@@ -35,4 +35,9 @@ class PhotosController < ApplicationController
 
     @new_interaction = Interaction.new
   end
+
+  def show_profile
+    @photos = Photo.where(user_id: params[:id])
+    # render json: @photo
+  end
 end
