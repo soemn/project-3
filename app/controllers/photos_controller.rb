@@ -12,7 +12,8 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find(params[:id])
     @interactions = Interaction.where(photo_id: params[:id])
-    # render json: @photo
+    @photo_id = params[:id]
+    @new_interaction = Interaction.new
   end
 
   def create
@@ -52,12 +53,16 @@ class PhotosController < ApplicationController
 
   def new
     @new_photo = Photo.new
-
-    # @new_interaction = Interaction.new
   end
 
   def new_interaction
-    @new_interaction = Interaction.new
+
+    current_user.interactions.create(
+      content: params[:interaction][:content],
+      message_type: params[:interaction][:message_type],
+
+    )
+    # render json: params
   end
 
   def show_profile
