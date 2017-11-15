@@ -15,16 +15,6 @@
           <%= link_to "Login", new_user_session_path, :class=>"nav-link" %>
         </li>
       <% else %>
-        <li class="nav-item active">
-          <%= link_to "New Photo", new_photo_path, :class=>"nav-link"%>
-          <span class="sr-only">(current)</span>
-        </li>
-        <li class="nav-item active">
-          <% if current_user.admin %>
-            <%= link_to "Create Brands", new_brand_path, :class=>"nav-link" %>
-            <span class="sr-only">(current)</span>
-          <% end %>
-        </li>
 
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,8 +27,31 @@
           </div>
         </div>
 
+        <li class="nav-item active">
+          <%= link_to "New Photo", new_photo_path, :class=>"nav-link"%>
+          <span class="sr-only">(current)</span>
+        </li>
+
       <% end %>
     </ul>
+
+  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <% if user_signed_in? %>
+      <% if current_user.admin %>
+
+        <li class="nav-item active">
+          <%= link_to "Create Brands", new_brand_path, :class=>"nav-link" %>
+          <span class="sr-only">(current)</span>
+        </li>
+
+        <li class="nav-item active">
+          <%= link_to "Create Rewards", new_reward_path, :class=>"nav-link" %>
+          <span class="sr-only">(current)</span>
+        </li>
+
+      <% end %>
+    <% end %>
+  </ul>
 
     <div class="nav-item active">
       <%= link_to "Rewards", rewards_path, :class=>"nav-link"%>

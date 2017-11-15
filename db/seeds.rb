@@ -10,6 +10,7 @@ Interaction.destroy_all
 Photo.destroy_all
 Brand.destroy_all
 User.destroy_all
+Reward.destroy_all
 
 5.times do
   User.create(
@@ -35,6 +36,12 @@ photo_array = [
   '515140-celebrity-endorsement-social-media-fails_gb38zv.png'
 ]
 
+photo_rewards = [
+  'https://media.dontpayfull.com/media/deals/adidas-coupon-code-0.jpg',
+  'http://i1-news.softpedia-static.com/images/news2/Free-Voucher-Scam-Lures-With-Offers-From-Target-Nike-and-Macy-s-465124-6.jpg',
+  'https://cavs-staging-cavaiersholdings.netdna-ssl.com/content/images/thumbs/0030263_ladies-columbia-darling-days-4-button-hoodie.jpeg'
+]
+
 10.times do
   Photo.create(
     title: Faker::LordOfTheRings.character,
@@ -52,5 +59,13 @@ end
     message_type: [0, 1].sample,
     user_id: User.all.sample.id,
     photo_id: Photo.all.sample.id
+  )
+end
+
+3.times do
+  Reward.create(
+    name: Faker::Pokemon.name,
+    required_points: [*0..100].sample,
+    photo_link: photo_rewards.sample
   )
 end
