@@ -29,7 +29,7 @@ class PhotosController < ApplicationController
     @new_photo = current_user.photos.create(
       title: params[:photo][:title],
       description: params[:photo][:description],
-      # brand_id: brand_id,
+      brand_id: brand_id,
       photo_link: image_short_name
     )
     if @new_photo.save

@@ -40,7 +40,7 @@ class BrandsController < ApplicationController
 
   def test
 
-    image = "http://res.cloudinary.com/dnqgbyfhs/image/upload/v1/user_photos/finwgfz6ripn3ddafdrq.jpg"
+    image = "https://www.pepsi.com/en-us/assets/cans/blue.png"
 
     response = JSON.parse(get_brand(image).body)
 
