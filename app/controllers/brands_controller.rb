@@ -1,4 +1,5 @@
 class BrandsController < ApplicationController
+  before_action :authenticate_user!, only: %i(new index)
   before_action :is_admin?, only: [:index]
 
   def index

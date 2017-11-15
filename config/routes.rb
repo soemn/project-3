@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :photos
 
-  resources :interactions
+  # resources :interactions
 
   resources :brands
 

@@ -1,7 +1,7 @@
 require 'google/cloud/vision'
 
 class PhotosController < ApplicationController
-  before_action :authenticate_user!, only: %i[new index]
+  before_action :authenticate_user!, only: %i(new index)
 
   def index
     @photos = current_user.photos
@@ -59,6 +59,10 @@ class PhotosController < ApplicationController
   def new
     @new_photo = Photo.new
 
+    # @new_interaction = Interaction.new
+  end
+
+  def new_interaction
     @new_interaction = Interaction.new
   end
 
