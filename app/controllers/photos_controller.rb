@@ -5,13 +5,12 @@ class PhotosController < ApplicationController
 
   def index
     @photos = current_user.photos
-    # @photos = Photo.all
-    # render json: @photos
   end
 
   def show
     @photo = Photo.find(params[:id])
     @photo_id = params[:id]
+    @photo_points = Interaction.where(["photo_id = ? and message_type = ?", params[:id], 1]).length
     @interactions = Interaction.where(["photo_id = ? and message_type = ?", params[:id], 0])
 
     @new_interaction = Interaction.new
