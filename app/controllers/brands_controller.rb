@@ -39,14 +39,24 @@ class BrandsController < ApplicationController
   end
 
   def test
-  
+
+    image = "http://res.cloudinary.com/dnqgbyfhs/image/upload/v1/user_photos/finwgfz6ripn3ddafdrq.jpg"
+
+    response = JSON.parse(get_brand(image).body)
+
+    render json: response
+  end
+
+  protected
+
+  def get_brand(brand_link)
     params = {
       "requests":[
         {
           "image":{
             "source":{
               "imageUri":
-                "http://res.cloudinary.com/dnqgbyfhs/image/upload/v1/user_photos/finwgfz6ripn3ddafdrq.jpg"
+                brand_link
             }
           },
           "features":[
@@ -59,19 +69,18 @@ class BrandsController < ApplicationController
       ]
     }.to_json
 
-      address = URI('https://vision.googleapis.com/v1/images:annotate?key=' + ENV['api_key'])
+    address = URI('https://vision.googleapis.com/v1/images:annotate?key=' + ENV['api_key'])
 
-      http = Net::HTTP.new(address.host, address.port)
-      http.use_ssl = true
-      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    http = Net::HTTP.new(address.host, address.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-      request = Net::HTTP::Post.new address.request_uri
-      request.add_field("Content-Type", "application/json")
+    request = Net::HTTP::Post.new address.request_uri
+    request.add_field("Content-Type", "application/json")
 
-      request.body = params
+    request.body = params
 
-      response = http.request(request)
-
-    render json: response.body
+    response = http.request(request)
   end
+
 end
