@@ -70,6 +70,7 @@ GEM
       xpath (~> 2.0)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
+    cloud_vision (1.0.4)
     cloudinary (1.8.1)
       aws_cf_signer
       rest-client
@@ -94,6 +95,10 @@ GEM
     digest-crc (0.4.1)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.2.1)
+    dotenv-rails (2.2.1)
+      dotenv (= 2.2.1)
+      railties (>= 3.2, < 5.2)
     erubi (1.7.0)
     execjs (2.7.0)
     faraday (0.13.1)
@@ -382,9 +387,11 @@ DEPENDENCIES
   bootstrap_form
   byebug
   capybara (~> 2.13)
+  cloud_vision
   cloudinary
   coffee-rails (~> 4.2)
   devise
+  dotenv-rails
   faker!
   google-cloud
   jbuilder (~> 2.5)
