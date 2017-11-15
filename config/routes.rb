@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     sign_up: 'register', edit: 'profile/edit'
   }
 
-  # get 'welcome/index'
+  get 'welcome/index'
   root 'welcome#index'
 
   get '/user/:id', to: 'photos#show_profile', as: 'users'
