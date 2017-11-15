@@ -11,8 +11,8 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
-    @interactions = Interaction.where(photo_id: params[:id])
     @photo_id = params[:id]
+    @interactions = Interaction.where(photo_id: params[:id])
     @new_interaction = Interaction.new
   end
 
@@ -49,26 +49,10 @@ class PhotosController < ApplicationController
     else
       redirect_to new_photo_path
     end
-
-    # current_user.interactions.create(
-    #   content: params[:interaction][:content],
-    #   message_type: params[:interaction][:message_type]
-    # )
-    # render json: params
   end
 
   def new
     @new_photo = Photo.new
-  end
-
-  def new_interaction
-
-    current_user.interactions.create(
-      content: params[:interaction][:content],
-      message_type: params[:interaction][:message_type],
-
-    )
-    # render json: params
   end
 
   def show_profile

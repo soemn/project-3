@@ -1,5 +1,5 @@
 class InteractionsController < ApplicationController
-  before_action :authenticate_user!, only: %i(new index)
+  before_action :authenticate_user!, only: %i[new index]
 
   def index
     @interactions = current_user.interactions
@@ -11,10 +11,14 @@ class InteractionsController < ApplicationController
   end
 
   def create
+    photo_id = params[:interaction][:photo_id]
     current_user.interactions.create(
       content: params[:interaction][:content],
-      message_type: params[:interaction][:message_type]
+      message_type: params[:interaction][:message_type],
+      photo_id: photo_id
     )
+
+    redirect_to photo_path(id: photo_id)
   end
 
   def new
