@@ -1,4 +1,5 @@
 class BrandsController < ApplicationController
+  before_action :authenticate_user!, only: %i(new index)
   before_action :is_admin?, only: [:index]
 
   def index
@@ -10,7 +11,7 @@ class BrandsController < ApplicationController
 end
 
   def create
-    current_user.brands.create(
+    Brand.create(
       name: params[:brand][:name],
       logo: params[:brand][:logo],
       link: params[:brand][:link]

@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   resources :photos
 
-  resources :interactions
+  # resources :interactions
 
   resources :brands
+
+  get 'interaction/new', to: 'photo#new_interaction'
 end

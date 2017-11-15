@@ -27,12 +27,16 @@ class PhotosController < ApplicationController
       content: params[:interaction][:content],
       message_type: params[:interaction][:message_type]
     )
-    # render json: params
+    render json: params
   end
 
   def new
     @new_photo = Photo.new
 
+    # @new_interaction = Interaction.new
+  end
+
+  def new_interaction
     @new_interaction = Interaction.new
   end
 end
