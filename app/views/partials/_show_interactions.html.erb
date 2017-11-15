@@ -1,8 +1,22 @@
 <% @interactions.each do |i| %>
-<%= i.content %>  <%= i.message_type %>
+<div>
+Content: <%= i.content %>
+</div>
+<div>
+Type: <%= i.message_type %>
+</div>
+<div >
+User: <%= i.user_id %>
+</div>
 <% end %>
 
-<form class="form-inline my-2 my-lg-0">
+<!-- <form class="form-inline my-2 my-lg-0">
   <input class="form-control mr-sm-2" type="comment" placeholder="Add Comment" aria-label="Comment">
   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
-</form>
+</form> -->
+
+<div class="nav-item active">
+  <input class="form-control mr-sm-2" type="comment" placeholder="Add Comment" aria-label="Comment">
+  <%= link_to "Submit", interactions_path, :class=>"button"%>
+  <span class="sr-only">(current)</span>
+</div>

@@ -1,4 +1,4 @@
-require 'google/cloud/vision'
+# require 'google/cloud/vision'
 
 class PhotosController < ApplicationController
   before_action :authenticate_user!, only: %i(new index)
@@ -11,7 +11,7 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
-    @interactions = Interaction.where(user_id: params[:id])
+    @interactions = Interaction.where(photo_id: params[:id])
     # render json: @photo
   end
 
@@ -19,28 +19,28 @@ class PhotosController < ApplicationController
     image_link = params[:image]
     image_short_name = image_link[25..60]
 
-    image_long_name = 'http://res.cloudinary.com/dnqgbyfhs/image/upload/v1510589603/' + image_short_name
+    # image_long_name = 'http://res.cloudinary.com/dnqgbyfhs/image/upload/v1510589603/' + image_short_name
+    #
+    # vision = Google::Cloud::Vision.new(
+    #   project: ENV['project_name'],
+    #   keyfile: ENV['credentials']
+    # )
 
-    vision = Google::Cloud::Vision.new(
-      project: ENV['project_name'],
-      keyfile: ENV['credentials']
-    )
+    # image = vision.image image_long_name
+    #
+    # result = {}
 
-    image = vision.image image_long_name
-
-    result = {}
-
-    image.logos.each do |logo|
-      result = logo.description
-    end
-
-    brand = Brand.find_by logo: result
-    brand_id = brand.id
+    # image.logos.each do |logo|
+    #   result = logo.description
+    # end
+    #
+    # brand = Brand.find_by logo: result
+    # brand_id = brand.id
 
     current_user.photos.create(
       title: params[:photo][:title],
       description: params[:photo][:description],
-      brand_id: brand_id,
+      # brand_id: brand_id,
       photo_link: image_short_name
     )
 
