@@ -24,7 +24,12 @@ class PhotosController < ApplicationController
     response = JSON.parse(get_brand(image_long_name).body)['responses'][0]['logoAnnotations'][0]['description']
 
     brand = Brand.find_by logo: response
-    brand_id = brand.id
+
+    if brand
+      brand_id = brand.id
+    else
+      brand_id = nil
+    end
 
     @new_photo = current_user.photos.create(
       title: params[:photo][:title],

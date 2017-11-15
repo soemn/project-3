@@ -19,7 +19,7 @@ User.destroy_all
   )
 end
 
-50.times do
+1.times do
   Brand.create(
     name: Faker::Pokemon.name,
     logo: 'Adidas',
