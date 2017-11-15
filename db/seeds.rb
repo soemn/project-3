@@ -23,7 +23,7 @@ end
   Brand.create(
     name: Faker::Pokemon.name,
     logo: 'Adidas',
-    link: 'Test'
+    link: 'http://shop.adidas.com.sg/'
   )
 end
 
@@ -42,7 +42,7 @@ photo_array = [
     photo_link: photo_array.sample,
     user_id: User.all.sample.id,
     brand_id: Brand.all.sample.id,
-    points: [*0..100].sample
+    # points: [*0..100].sample
   )
 end
 

@@ -22,20 +22,14 @@ class PhotosController < ApplicationController
 
     image_long_name = 'http://res.cloudinary.com/dnqgbyfhs/image/upload/v1510589603/' + image_short_name
 
-    check_result = JSON.parse(get_brand(image_long_name).body)['responses']
+    check_result = JSON.parse(get_brand(image_long_name).body)['responses'][0]
 
-    if (check_result.length == 0)
-      response = check_result[0]['logoAnnotations'][0]['description']
-    else
-      response = nil
-    end
+    brand_id = nil
 
-    brand = Brand.find_by logo: response
-
-    if brand
+    if (check_result.present?)
+      response = check_result['logoAnnotations'][0]['description']
+      brand = Brand.find_by logo: response
       brand_id = brand.id
-    else
-      brand_id = nil
     end
 
     @new_photo = current_user.photos.create(
@@ -44,6 +38,7 @@ class PhotosController < ApplicationController
       brand_id: brand_id,
       photo_link: image_short_name
     )
+
     if @new_photo.save
       redirect_to photos_path
     else
