@@ -6,11 +6,11 @@
           <%= @photo.title %>
           <small>
             by:
-            <%= link_to(@photo.user.name, users_path(@photo.user)) %>
+            <%= link_to(@photo.user.name, users_path(@photo.user), class:"badge badge-secondary") %>
           </small>
         </h4>
           <p class="card-text"><%= @photo.description %></p>
-          <p class="card-text">Points : <%= @photo.points %></p>
+          <p class="card-text">Points : <%= @photo_points %></p>
       </div>
     </div>
   </div>

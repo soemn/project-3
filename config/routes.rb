@@ -5,18 +5,15 @@ Rails.application.routes.draw do
     sign_up: 'register', edit: 'profile/edit'
   }
 
-  # get 'welcome/index'
+  get 'welcome/index'
   root 'welcome#index'
 
   get '/user/:id', to: 'photos#show_profile', as: 'users'
 
-  # get '/photo/:id', to: 'photos#new_interaction'
-  # post '/photo/:id', to: 'photos#new_interaction'
-  post '/interactions/new', to: 'photos#new_interaction'
+  post '/interactions/new', to: 'interactions#create'
+  post '/interactions/like', to: 'interactions#like'
 
   resources :photos
-
-  # resources :interactions
 
   resources :brands
 

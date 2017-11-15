@@ -49,11 +49,15 @@ photo_rewards = [
     photo_link: photo_array.sample,
     user_id: User.all.sample.id,
     brand_id: Brand.all.sample.id,
-    points: [*0..100].sample
+    # points: [*0..100].sample
   )
 end
 
+<<<<<<< HEAD
 15.times do
+=======
+10.times do
+>>>>>>> f4c74ff11885e3eeaebabbcd048f3d8c6a171704
   Interaction.create(
     content: Faker::WorldOfWarcraft.quote,
     message_type: [0, 1].sample,

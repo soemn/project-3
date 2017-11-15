@@ -39,13 +39,11 @@ class BrandsController < ApplicationController
   end
 
   def test
-
-    image = "http://www.wou.edu/alumni/files/2015/08/Columbia-2.jpg"
-
+    image = "https://www.nike.com/android-icon-128x128.png"
 
     response = JSON.parse(get_brand(image).body)
-
-    render json: response
+    check_result = JSON.parse(get_brand(image).body)['responses'][0].present?
+    render json: check_result
   end
 
   protected
