@@ -62,6 +62,7 @@ class PhotosController < ApplicationController
 
   def show_profile
     @photos = Photo.where(user_id: params[:id])
+    @photo_owner = User.find(params[:id])
     # render json: @photo
   end
 
