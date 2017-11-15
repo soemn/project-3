@@ -3,7 +3,7 @@
 
 body {
   font-family: 'Fira Sans', sans-serif;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #000000;
 }
 
@@ -24,7 +24,7 @@ body {
 }
 
 .btn-outline-success {
-    color: #ffffff;
+    color: #000000;
     background-color: #28a745;
     background-image: none;
     border-color: #28a745;
@@ -59,7 +59,7 @@ body {
 }
 
 .btn-secondary:not([disabled]):not(.disabled):active, .btn-secondary:not([disabled]):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
-    color: #fff;
+    color: #000;
     background-color: #28a745;
     border-color: #28a745;
     -webkit-box-shadow: none;
@@ -67,7 +67,7 @@ body {
 }
 
 .btn-secondary, .btn-secondary:hover {
-    color: #fff;
+    color: #000;
     background-color: #28a745;
     border-color: #28a745;
 }

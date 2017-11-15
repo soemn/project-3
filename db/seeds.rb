@@ -11,7 +11,7 @@ Photo.destroy_all
 Brand.destroy_all
 User.destroy_all
 
-3.times do
+10.times do
   User.create(
     name: Faker::WorldOfWarcraft.hero,
     email: Faker::Internet.email,
@@ -19,7 +19,7 @@ User.destroy_all
   )
 end
 
-1.times do
+50.times do
   Brand.create(
     name: Faker::Pokemon.name,
     logo: 'Adidas',
@@ -35,7 +35,7 @@ photo_array = [
   '515140-celebrity-endorsement-social-media-fails_gb38zv.png'
 ]
 
-3.times do
+50.times do
   Photo.create(
     title: Faker::LordOfTheRings.character,
     description: Faker::LordOfTheRings.location,
@@ -46,7 +46,7 @@ photo_array = [
   )
 end
 
-3.times do
+50.times do
   Interaction.create(
     content: Faker::WorldOfWarcraft.quote,
     message_type: [0, 1].sample,

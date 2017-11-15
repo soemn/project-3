@@ -1,7 +1,7 @@
 require 'google/cloud/vision'
 
 class PhotosController < ApplicationController
-  before_action :authenticate_user!, only: %i[new index]
+  before_action :authenticate_user!, only: %i(new index)
 
   def index
     @photos = current_user.photos
@@ -19,30 +19,35 @@ class PhotosController < ApplicationController
     image_link = params[:image]
     image_short_name = image_link[25..60]
 
-    image_long_name = 'http://res.cloudinary.com/dnqgbyfhs/image/upload/v1510589603/' + image_short_name
+    # image_long_name = 'http://res.cloudinary.com/dnqgbyfhs/image/upload/v1510589603/' + image_short_name
+    #
+    # vision = Google::Cloud::Vision.new(
+    #   project: ENV['project_name'],
+    #   keyfile: ENV['credentials']
+    # )
+    #
+    # image = vision.image image_long_name
+    #
+    # result = {}
+    #
+    # image.logos.each do |logo|
+    #   result = logo.description
+    # end
+    #
+    # brand = Brand.find_by logo: result
+    # brand_id = brand.id
 
-    vision = Google::Cloud::Vision.new(
-      project: ENV['project_name'],
-      keyfile: ENV['credentials']
-    )
-
-    image = vision.image image_long_name
-
-    result = {}
-
-    image.logos.each do |logo|
-      result = logo.description
-    end
-
-    brand = Brand.find_by logo: result
-    brand_id = brand.id
-
-    current_user.photos.create(
+    @new_photo = current_user.photos.create(
       title: params[:photo][:title],
       description: params[:photo][:description],
-      brand_id: brand_id,
+      # brand_id: brand_id,
       photo_link: image_short_name
     )
+    if @new_photo.save
+      redirect_to photos_path
+    else
+      redirect_to new_photo_path
+    end
 
     # current_user.interactions.create(
     #   content: params[:interaction][:content],
@@ -54,6 +59,15 @@ class PhotosController < ApplicationController
   def new
     @new_photo = Photo.new
 
+    # @new_interaction = Interaction.new
+  end
+
+  def new_interaction
     @new_interaction = Interaction.new
+  end
+
+  def show_profile
+    @photos = Photo.where(user_id: params[:id])
+    # render json: @photo
   end
 end
