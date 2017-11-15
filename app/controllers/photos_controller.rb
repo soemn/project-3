@@ -22,7 +22,13 @@ class PhotosController < ApplicationController
 
     image_long_name = 'http://res.cloudinary.com/dnqgbyfhs/image/upload/v1510589603/' + image_short_name
 
-    response = JSON.parse(get_brand(image_long_name).body)['responses'][0]['logoAnnotations'][0]['description']
+    check_result = JSON.parse(get_brand(image_long_name).body)['responses']
+
+    if (check_result.length == 0)
+      response = check_result[0]['logoAnnotations'][0]['description']
+    else
+      response = nil
+    end
 
     brand = Brand.find_by logo: response
 
