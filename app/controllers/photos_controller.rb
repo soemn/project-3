@@ -1,4 +1,4 @@
-require 'google/cloud/vision'
+# require 'google/cloud/vision'
 
 class PhotosController < ApplicationController
   before_action :authenticate_user!, only: %i[new index]
@@ -11,7 +11,7 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
-    @interactions = Interaction.where(user_id: params[:id])
+    @interactions = Interaction.where(photo_id: params[:id])
     # render json: @photo
   end
 

@@ -35,7 +35,7 @@ photo_array = [
   '515140-celebrity-endorsement-social-media-fails_gb38zv.png'
 ]
 
-50.times do
+30.times do
   Photo.create(
     title: Faker::LordOfTheRings.character,
     description: Faker::LordOfTheRings.location,

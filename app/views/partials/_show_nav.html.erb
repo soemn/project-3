@@ -28,7 +28,7 @@
 
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= current_user.email %>
+            <%= current_user.name %>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <%= link_to "Edit Profile", edit_user_registration_path, :class=>"dropdown-item" %>
@@ -39,6 +39,11 @@
 
       <% end %>
     </ul>
+
+    <div class="nav-item active">
+      <%= link_to "Rewards", rewards_path, :class=>"nav-link"%>
+      <span class="sr-only">(current)</span>
+    </div>
 
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
