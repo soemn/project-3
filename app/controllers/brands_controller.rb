@@ -1,3 +1,10 @@
+require 'google/cloud/vision'
+require 'dotenv/load'
+require 'uri'
+require 'net/http'
+require "net/https"
+
+
 class BrandsController < ApplicationController
   before_action :is_admin?, only: [:index]
 
@@ -31,21 +38,39 @@ class BrandsController < ApplicationController
   end
 
   def test
-    image_path = 'https://yt3.ggpht.com/-160t02WOZiA/AAAAAAAAAAI/AAAAAAAAAAA/RJ1iA6f_20o/s900-c-k-no-mo-rj-c0xffffff/photo.jpg'
+  
+    params = {
+      "requests":[
+        {
+          "image":{
+            "source":{
+              "imageUri":
+                "http://res.cloudinary.com/dnqgbyfhs/image/upload/v1/user_photos/finwgfz6ripn3ddafdrq.jpg"
+            }
+          },
+          "features":[
+            {
+              "type":"LOGO_DETECTION",
+              "maxResults":1
+            }
+          ]
+        }
+      ]
+    }.to_json
 
-    vision = Google::Cloud::Vision.new(
-      project: 'distributed-amp-185915',
-      keyfile: '83623-fc8c5d0cb28d.json'
-    )
+      address = URI('https://vision.googleapis.com/v1/images:annotate?key=' + ENV['api_key'])
 
-    image = vision.image image_path
+      http = Net::HTTP.new(address.host, address.port)
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-    result = {}
+      request = Net::HTTP::Post.new address.request_uri
+      request.add_field("Content-Type", "application/json")
 
-    image.logos.each do |logo|
-      result = logo.description
-    end
+      request.body = params
 
-    render json: result
+      response = http.request(request)
+
+    render json: response.body
   end
 end
