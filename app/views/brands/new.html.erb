@@ -1,12 +1,15 @@
 <div class="container">
+
+  <a href="/test">Test Brand Logo</a>
+  <br><br>
+
   <h1>Submit Brands</h1>
   <%= bootstrap_form_for @new_brand do |f| %>
   <%= f.text_field :name %>
   <%= f.text_field :link %>
-  <a href="#" id="upload_widget_opener"></a>
-  <br>
+  <%= f.text_field :logo %>
   <br>
   <%= f.submit("Submit") %>
-<% end %>
+  <% end %>
 
 </div>

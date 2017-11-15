@@ -8,11 +8,13 @@ Rails.application.routes.draw do
   # get 'welcome/index'
   root 'welcome#index'
 
+  get '/user/:id', to: 'photos#show_profile', as: 'users'
+
   resources :photos
 
   # resources :interactions
 
   resources :brands
 
-  get 'interaction/new', to: 'photo#new_interaction'
+  get '/test', to: 'brands#test'
 end
