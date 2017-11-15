@@ -4,22 +4,21 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand" href="/">What's That?!</a>
-
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <% unless user_signed_in? %>
-        <li class="nav-item active">
+        <li>
           <%= link_to "Register", new_user_registration_path, :class=>"nav-link"%>
           <span class="sr-only">(current)</span>
         </li>
-        <li class="nav-item">
+        <li>
           <%= link_to "Login", new_user_session_path, :class=>"nav-link" %>
         </li>
       <% else %>
-        <li class="nav-item active">
+        <li>
           <%= link_to "New Photo", new_photo_path, :class=>"nav-link"%>
           <span class="sr-only">(current)</span>
         </li>
-        <li class="nav-item active">
+        <li>
           <% if current_user.admin %>
             <%= link_to "Create Brands", new_brand_path, :class=>"nav-link" %>
             <span class="sr-only">(current)</span>
@@ -40,7 +39,7 @@
       <% end %>
     </ul>
 
-    <div class="nav-item active">
+    <div>
       <%= link_to "Rewards", rewards_path, :class=>"nav-link"%>
       <span class="sr-only">(current)</span>
     </div>
