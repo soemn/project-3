@@ -42,6 +42,7 @@ class BrandsController < ApplicationController
 
     image = "http://www.wou.edu/alumni/files/2015/08/Columbia-2.jpg"
 
+
     response = JSON.parse(get_brand(image).body)
 
     render json: response

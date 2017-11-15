@@ -12,11 +12,11 @@ Rails.application.routes.draw do
 
   # get '/photo/:id', to: 'photos#new_interaction'
   # post '/photo/:id', to: 'photos#new_interaction'
-  # post '/interactions', to: 'photos#new_interaction'
+  post '/interactions/new', to: 'photos#new_interaction'
 
   resources :photos
 
-  resources :interactions
+  # resources :interactions
 
   resources :brands
 
