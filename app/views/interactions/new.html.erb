@@ -1,7 +1,9 @@
-<%= bootstrap_form_for @new_interaction do |i| %>
-<%= i.text_field :content %>
-<%= i.text_field :message_type %>
-<br>
-<br>
-<%= i.submit("Submit") %>
+<div class="container">
+  <%= bootstrap_form_for @new_interaction do |i| %>
+  <%= i.text_field :content %>
+  <%= i.text_field :message_type %>
+  <br>
+  <br>
+  <%= i.submit("Submit") %>
 <% end %>
+</div>
