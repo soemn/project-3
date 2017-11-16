@@ -7,7 +7,7 @@
       <%= cl_image_tag("2c4d4373-96a8-42cb-97b8-df592b2049782_gyjxfd.png", :width=>54, :crop=>"scale") %>
       What's That?!
     </a>
-    <ul class="navbar-nav col">
+    <ul class="navbar-nav">
       <% unless user_signed_in? %>
         <li>
           <%= link_to "Register", new_user_registration_path, :class=>"nav-item", :class=>"nav-link" %>
@@ -18,7 +18,7 @@
       <% end %>
     </ul>
 
-    <ul class="navbar-nav col">
+    <ul class="navbar-nav mx-auto">
       <li class="nav-item">
         <%= link_to "New Photo", new_photo_path, :class=>"nav-link"%>
       </li>
@@ -28,7 +28,7 @@
       </li>
     </ul>
 
-    <ul class="navbar-nav col">
+    <ul class="navbar-nav">
       <% if user_signed_in? %>
         <% if current_user.admin %>
 
@@ -58,6 +58,6 @@
   <% end %>
   <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline- my-2 my-sm-0" type="submit"><%= link_to "Search", brands_path %></button>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><%= link_to "Search", brands_path %></button>
   </form>
 </nav>
