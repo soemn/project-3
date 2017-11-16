@@ -10,11 +10,21 @@ class BrandsController < ApplicationController
   before_action :is_admin?, only: [:index]
 
   def index
-    @brands = Photo.where(brand_id: params[:id])
+    @brands = Brand.all
   end
 
   def is_admin?
     redirect_to root_path if current_user.admin != true
+  end
+
+  def search
+    @params = params[:term]
+
+    if @params.length > 0
+      @brand = Brand.where(logo: @params)
+    end
+
+    @photos = Photo.where(brand_id: @brand)
   end
 
   def create
@@ -30,9 +40,9 @@ class BrandsController < ApplicationController
     end
   end
 
-  def show
-    @brand = Photo.where(brand_id: params[:id])
-  end
+  # def show
+  #   @brand = Photo.where(brand_id: params[:id])
+  # end
 
   def new
     @new_brand = Brand.new

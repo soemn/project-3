@@ -1,13 +1,8 @@
-<div class="card-columns">
+
   <% @brands.each do |f| %>
 
-    <div class="card">
-
-      <a href="<%= photo_path(f) %>"><%= cl_image_tag(f.photo_link, class:"card-img-top") %></a>
-
-      <%= render "./partials/show_card_body", :f => f %>
-
-    </div>
+  <div class="card-columns">
+    <p><%= f.name %></p>
+  </div>
 
   <% end %>
-</div>

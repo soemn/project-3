@@ -1,0 +1,14 @@
+
+<div class="container">
+
+<% if @photos.length > 0 %>
+  <h1>Showing All <strong><%= @params %></strong> Photos</h1>
+  <%= render "./partials/show_all_photos_without_points" %>
+  <% else  %>
+  <h1>Brand does not exist.</h1>
+  <h4>Email us at <a href="#">newbrand@whatsthat.com</a> to include your brand.</h4>
+<% end %>
+
+
+
+</div>
