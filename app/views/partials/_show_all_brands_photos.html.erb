@@ -1,7 +1,7 @@
 <div class="card-columns">
   <% @brands.each do |f| %>
 
-    <div class="card">
+    <div class="card border border-danger rounded">
 
       <a href="<%= photo_path(f) %>"><%= cl_image_tag(f.photo_link, class:"card-img-top") %></a>
 
