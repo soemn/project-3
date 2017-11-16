@@ -14,9 +14,6 @@
           <%= link_to "Login", new_user_session_path, :class=>"nav-link", :class=>"nav-link" %>
         </li>
       <% else %>
-
-
-
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= current_user.name %>
@@ -27,9 +24,8 @@
             <%= link_to "Logout", destroy_user_session_path, method: :delete, :class=>"dropdown-item" %>
           </div>
         </div>
-
+      </ul>
       <% end %>
-    </ul>
 
 
         <li class="nav-item active">
@@ -37,8 +33,6 @@
           <span class="sr-only">(current)</span>
         </li>
 
-      <% end %>
-    </ul>
 
   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
     <% if user_signed_in? %>

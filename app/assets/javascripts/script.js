@@ -12,4 +12,6 @@ $(function() {
       console.log(error, result)
     }
   )
+
+  $('[data-toggle="tooltip"]').tooltip()
 })
