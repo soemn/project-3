@@ -2,7 +2,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+  <div class="collapse navbar-collapse h6" id="navbarTogglerDemo01">
     <a class="navbar-brand" href="/">
       <%= cl_image_tag("2c4d4373-96a8-42cb-97b8-df592b2049782_gyjxfd.png", :width=>54, :crop=>"scale") %>
       What's That?!
@@ -18,7 +18,7 @@
       <% end %>
     </ul>
 
-    <ul class="navbar-nav col flexCenter">
+    <ul class="navbar-nav col">
       <li class="nav-item">
         <%= link_to "New Photo", new_photo_path, :class=>"nav-link"%>
       </li>
@@ -45,21 +45,19 @@
     </ul>
   </div>
   <% if user_signed_in? %>
-    <div class="dropdown ml-auto">
+    <div class="dropdown col">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <%= current_user.name %>
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <div class="dropdown-menu ml-auto" aria-labelledby="dropdownMenuButton">
         <%= link_to "Edit Profile", edit_user_registration_path, :class=>"dropdown-item" %>
         <%= link_to "My Photos", photos_path, :class=>"dropdown-item" %>
         <%= link_to "Logout", destroy_user_session_path, method: :delete, :class=>"dropdown-item" %>
       </div>
     </div>
   <% end %>
-  <form class="form-inline my-2 my-lg-0 ml-auto">
+  <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline- my-2 my-sm-0" type="submit"><%= link_to "Search", brands_path %></button>
   </form>
-
-</div>
 </nav>
