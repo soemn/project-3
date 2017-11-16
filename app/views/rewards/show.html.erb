@@ -3,19 +3,20 @@
 
   <div class="card-columns">
     <% @all_rewards.each do |r| %>
-    <div class="card" style="width: 20rem;">
-      <%= cl_image_tag(r.reward.photo_link, class:"card-img-top") %>
-      <div class="card-body">
-        <h4 class="card-title">
-          Item: <%= r.reward.name %>
-        </h4>
-        <p class="card-text">
-          Points Used: <%= r.reward.required_points %>
-        </p>
+      <div class="card" style="width: 20rem;">
+        <%= cl_image_tag(r.reward.photo_link, class:"card-img-top") %>
+        <div class="card-body">
+          <h4 class="card-title">
+            Item:
+            <%= r.reward.name %>
+          </h4>
+          <p class="card-text">
+            Points Used:
+            <%= r.reward.required_points %>
+          </p>
+        </div>
       </div>
-    </div>
     <% end %>
   </div>
-
 
 </div>

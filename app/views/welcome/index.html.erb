@@ -1,10 +1,12 @@
-<div class="container-fluid">
-<h1 class="text-center">Welcome <strong>
+<div class="container">
+  <h1 class="text-center">Welcome
+    <strong>
 
-<% if user_signed_in? %>
-<%= current_user.name %>
-<% end %>
-</strong></h1>
+      <% if user_signed_in? %>
+        <%= current_user.name %>
+      <% end %>
+    </strong>
+  </h1>
 
   <%= render "./partials/show_all_photos_without_points" %>
 </div>
