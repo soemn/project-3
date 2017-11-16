@@ -3,6 +3,11 @@ class PhotosController < ApplicationController
 
   def index
     @photos = current_user.photos
+
+    @photos.each do |photo|
+      photo.points = Interaction.where(["photo_id = ? and message_type = ?", photo.id, 1]).length
+    end
+
   end
 
   def show
