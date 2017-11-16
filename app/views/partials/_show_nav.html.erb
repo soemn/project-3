@@ -3,7 +3,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="/">What's That?!</a>
+    <a class="navbar-brand" href="/"><img src="http://res.cloudinary.com/dnqgbyfhs/image/upload/c_scale,h_100/v1510813282/2c4d4373-96a8-42cb-97b8-df592b204978_npr8z2.png" alt="Logo"></a>
     <ul class="navbar-nav nav-pills mr-auto">
       <% unless user_signed_in? %>
         <li>
@@ -24,15 +24,15 @@
             <%= link_to "Logout", destroy_user_session_path, method: :delete, :class=>"dropdown-item" %>
           </div>
         </div>
-      </ul>
-      <% end %>
-
 
         <li class="nav-item">
           <%= link_to "New Photo", new_photo_path, :class=>"nav-link"%>
           <span class="sr-only">(current)</span>
         </li>
 
+      </ul>
+
+      <% end %>
 
   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
     <% if user_signed_in? %>
