@@ -24,7 +24,7 @@ class RewardsController < ApplicationController
       reward_id: params[:redemption][:reward_id]
     )
 
-    redirect_to rewards_path
+    redirect_to rewards_show_path
   end
 
   def show
