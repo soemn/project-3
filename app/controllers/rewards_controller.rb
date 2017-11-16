@@ -26,13 +26,13 @@ class RewardsController < ApplicationController
 
     points_required = Reward.find(@reward_id).required_points
 
-    if check_points > points_required
+    if check_points >= points_required
       @new_redemption = current_user.redemptions.create(
         reward_id: @reward_id
       )
       redirect_to rewards_show_path
     else
-      flash[:notice] = 'Insuccifient Points'
+      flash[:notice] = 'Insufficient Points'
       redirect_to rewards_path
     end
   end

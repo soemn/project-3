@@ -22,7 +22,6 @@ class PhotosController < ApplicationController
   def create
     image_link = params[:image]
     image_short_name = image_link[25..60]
-
     image_long_name = 'http://res.cloudinary.com/dnqgbyfhs/image/upload/v1510589603/' + image_short_name
 
     check_result = JSON.parse(get_brand(image_long_name).body)['responses'][0]

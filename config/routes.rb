@@ -13,12 +13,15 @@ Rails.application.routes.draw do
 
   resources :photos
 
-  resources :brands
+  resources :brands, only: %i[new create index]
 
   resources :rewards, only: %i[index new create]
 
   get '/rewards/show', to: 'rewards#show'
   post '/rewards/redeem', to: 'rewards#redeem'
 
+  get '/brands/search', to: 'brands#search', as: 'brands_search'
+
+  # API test
   get '/test', to: 'brands#test'
 end
