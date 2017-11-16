@@ -15,9 +15,9 @@ Rails.application.routes.draw do
 
   resources :brands
 
-  resources :rewards, only: %i[index new create]
+  resources :rewards, only: %i[index new create show]
 
-  get '/rewards/redeem', to: 'rewards#redeem'
+  post '/rewards/redeem', to: 'rewards#redeem'
 
   get '/test', to: 'brands#test'
 end

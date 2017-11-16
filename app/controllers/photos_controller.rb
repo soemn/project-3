@@ -1,5 +1,3 @@
-# require 'google/cloud/vision'
-
 class PhotosController < ApplicationController
   before_action :authenticate_user!, only: %i[new index]
 

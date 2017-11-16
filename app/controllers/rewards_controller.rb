@@ -3,7 +3,7 @@ class RewardsController < ApplicationController
 
   def index
     @rewards = Reward.all
-    @new_redemption = Reward.new
+    @new_redemption = Redemption.new
   end
 
   def create
@@ -20,7 +20,15 @@ class RewardsController < ApplicationController
   end
 
   def redeem
-    render json: params
+    @new_redemption = current_user.redemptions.create(
+      reward_id: params[:redemption][:reward_id]
+    )
+
+    redirect_to rewards_path
+  end
+
+  def show
+    @all_rewards = Redemption.where(user_id: current_user.id)
   end
 
   def new

@@ -11,9 +11,7 @@
       </p>
 
       <%= bootstrap_form_for @new_redemption, :url => rewards_redeem_path, :html => {:method => :post} do |f| %>
-        <%= f.hidden_field :name %>
-        <%= f.hidden_field :required_points, :value => 0 %>
-        <%= f.hidden_field :photo_link, :value => @photo_id %>
+        <%= f.hidden_field :reward_id, :value => r.id %>
         <%= f.submit "Submit", :class => 'btn btn-primary' %>
       <% end %>
 
