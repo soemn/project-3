@@ -1,0 +1,12 @@
+<div class="container">
+
+  <h1>Submit Rewards</h1>
+  <%= bootstrap_form_for @new_reward do |r| %>
+  <%= r.text_field :name %>
+  <%= r.text_field :photo_link %>
+  <%= r.text_field :required_points %>
+  <br>
+  <%= r.submit("Submit") %>
+  <% end %>
+
+</div>

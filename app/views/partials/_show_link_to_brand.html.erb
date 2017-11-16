@@ -1,0 +1,6 @@
+<p><%= @photo.brand.link %></p>
+<div class="">
+  <a href="<%= @photo.brand.link %>">
+    <%= cl_image_tag @photo.photo_link, :gravity=>"auto:body", :width=>500, :crop=>"crop", :zoom=>'0.1', class:"card-img-top"%>
+  </a>
+</div>

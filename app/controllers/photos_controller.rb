@@ -5,14 +5,14 @@ class PhotosController < ApplicationController
 
   def index
     @photos = current_user.photos
-    # @photos = Photo.all
-    # render json: @photos
   end
 
   def show
     @photo = Photo.find(params[:id])
-    @interactions = Interaction.where(photo_id: params[:id])
     @photo_id = params[:id]
+    @photo_points = Interaction.where(["photo_id = ? and message_type = ?", params[:id], 1]).length
+    @interactions = Interaction.where(["photo_id = ? and message_type = ?", params[:id], 0])
+
     @new_interaction = Interaction.new
   end
 
@@ -22,20 +22,14 @@ class PhotosController < ApplicationController
 
     image_long_name = 'http://res.cloudinary.com/dnqgbyfhs/image/upload/v1510589603/' + image_short_name
 
-    check_result = JSON.parse(get_brand(image_long_name).body)['responses']
+    check_result = JSON.parse(get_brand(image_long_name).body)['responses'][0]
 
-    if (check_result.length == 0)
-      response = check_result[0]['logoAnnotations'][0]['description']
-    else
-      response = nil
-    end
+    brand_id = nil
 
-    brand = Brand.find_by logo: response
-
-    if brand
+    if (check_result.present?)
+      response = check_result['logoAnnotations'][0]['description']
+      brand = Brand.find_by logo: response
       brand_id = brand.id
-    else
-      brand_id = nil
     end
 
     @new_photo = current_user.photos.create(
@@ -44,37 +38,21 @@ class PhotosController < ApplicationController
       brand_id: brand_id,
       photo_link: image_short_name
     )
+
     if @new_photo.save
       redirect_to photos_path
     else
       redirect_to new_photo_path
     end
-
-    # current_user.interactions.create(
-    #   content: params[:interaction][:content],
-    #   message_type: params[:interaction][:message_type]
-    # )
-    # render json: params
   end
 
   def new
     @new_photo = Photo.new
   end
 
-  def new_interaction
-
-    current_user.interactions.create(
-      content: params[:interaction][:content],
-      message_type: params[:interaction][:message_type],
-
-    )
-    # render json: params
-  end
-
   def show_profile
     @photos = Photo.where(user_id: params[:id])
     @photo_owner = User.find(params[:id])
-    # render json: @photo
   end
 
   protected

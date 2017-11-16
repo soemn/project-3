@@ -1,0 +1,16 @@
+<div class="card-column">
+  <% @rewards.each do |r| %>
+  <div class="card" style="width: 20rem;">
+    <%= cl_image_tag(r.photo_link, class:"card-img-top") %>
+    <div class="card-body">
+      <h4 class="card-title">
+        Item: <% r.name %>
+      </h4>
+      <p class="card-text">
+        Points Needed: <% r.required_points %>
+      </p>
+      <a href="#" class="btn btn-primary">Redeem</a>
+    </div>
+  </div>
+  <% end %>
+</div>

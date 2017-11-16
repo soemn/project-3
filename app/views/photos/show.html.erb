@@ -8,6 +8,9 @@
     </div>
 
     <div class="col-7">
+      <% if @photo.brand %>
+        <%= render './partials/show_link_to_brand'%>
+      <% end %>
       <%= render "./partials/show_interactions", @interaction => @interaction %>
     </div>
   </div>
