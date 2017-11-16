@@ -1,8 +1,9 @@
 class RewardsController < ApplicationController
-  before_action :authenticate_user!, only: %i(new)
+  before_action :authenticate_user!, only: %i[new]
 
   def index
     @rewards = Reward.all
+    @new_redemption = Reward.new
   end
 
   def create
@@ -16,6 +17,10 @@ class RewardsController < ApplicationController
     else
       redirect_to new_reward_path
     end
+  end
+
+  def redeem
+    render json: params
   end
 
   def new
