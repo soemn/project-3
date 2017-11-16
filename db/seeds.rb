@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Redemption.destroy_all
 Interaction.destroy_all
 Photo.destroy_all
 Brand.destroy_all
@@ -65,7 +66,7 @@ end
 3.times do
   Reward.create(
     name: Faker::Pokemon.name,
-    required_points: [*0..100].sample,
+    required_points: [*1..2].sample,
     photo_link: photo_rewards.sample
   )
 end
