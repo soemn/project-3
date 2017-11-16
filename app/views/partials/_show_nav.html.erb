@@ -3,6 +3,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+<<<<<<< HEAD
     <a class="navbar-brand" href="/"><img src="http://res.cloudinary.com/dnqgbyfhs/image/upload/c_scale,h_100/v1510813282/2c4d4373-96a8-42cb-97b8-df592b204978_npr8z2.png" alt="Logo"></a>
     <ul class="navbar-nav nav-pills mr-auto">
       <% unless user_signed_in? %>
@@ -38,30 +39,62 @@
     <% if user_signed_in? %>
       <% if current_user.admin %>
 
+=======
+    <a class="navbar-brand" href="/">What's That?!</a>
+    <ul class="navbar-nav mr-auto">
+      <% unless user_signed_in? %>
+>>>>>>> 24d2e3e8235455c90446bcb5f757cda5f82bcfef
         <li class="nav-item">
-          <%= link_to "Create Brands", new_brand_path, :class=>"nav-link" %>
-          <span class="sr-only">(current)</span>
+          <%= link_to "Register", new_user_registration_path, :class=>"nav-link" %>
         </li>
-
         <li class="nav-item">
-          <%= link_to "Create Rewards", new_reward_path, :class=>"nav-link" %>
-          <span class="sr-only">(current)</span>
+          <%= link_to "Login", new_user_session_path, :class=>"nav-link" %>
         </li>
-
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <%= link_to "New Photo", new_photo_path, :class=>"nav-link" %>
+      </li>
 
-    <div class="nav-item">
-      <%= link_to "Rewards", rewards_path, :class=>"nav-link"%>
-      <span class="sr-only">(current)</span>
-    </div>
+      <li class="nav-item">
+        <%= link_to "Rewards", rewards_path, :class=>"nav-link" %>
+      </li>
+    </ul>
 
+    <ul class="navbar-nav">
+      <% if user_signed_in? %>
+        <% if current_user.admin %>
 
-    <form class="form-inline my-2 my-lg-0">
+          <li class="nav-item">
+            <%= link_to "Create Brands", new_brand_path, :class=>"nav-link" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "Create Rewards", new_reward_path, :class=>"nav-link" %>
+          </li>
+
+        <% end %>
+      <% end %>
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0 ml-auto">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" onclick="" type="submit"><%= link_to "Search", brands_path %></button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><%= link_to "Search", brands_path %></button>
     </form>
+
+    <% if user_signed_in? %>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= current_user.name %>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <%= link_to "Edit Profile", edit_user_registration_path, :class=>"dropdown-item" %>
+          <%= link_to "My Photos", photos_path, :class=>"dropdown-item" %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class=>"dropdown-item" %>
+        </div>
+      </div>
+    <% end %>
 
   </div>
 </nav>
