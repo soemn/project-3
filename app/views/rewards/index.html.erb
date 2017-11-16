@@ -1,6 +1,12 @@
 <div class="container">
   <h1>Rewards Page</h1>
 
+  <% if user_signed_in? %>
+    <p>
+      Total points: <%= @total_points %>
+    </p>
+  <% end %>
+
   <%= render "./partials/show_all_rewards" %>
 
 </div>

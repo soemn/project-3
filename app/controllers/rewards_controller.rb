@@ -1,9 +1,11 @@
 class RewardsController < ApplicationController
-  before_action :authenticate_user!, only: %i[new]
+  before_action :authenticate_user!, only: %i[new redeem show create]
 
   def index
     @rewards = Reward.all
     @new_redemption = Redemption.new
+
+    @total_points = check_points if current_user
   end
 
   def create
@@ -20,11 +22,19 @@ class RewardsController < ApplicationController
   end
 
   def redeem
-    @new_redemption = current_user.redemptions.create(
-      reward_id: params[:redemption][:reward_id]
-    )
+    @reward_id = params[:redemption][:reward_id]
 
-    redirect_to rewards_path
+    points_required = Reward.find(@reward_id).required_points
+
+    if check_points > points_required
+      @new_redemption = current_user.redemptions.create(
+        reward_id: @reward_id
+      )
+      redirect_to rewards_show_path
+    else
+      flash[:notice] = 'Insuccifient Points'
+      redirect_to rewards_path
+    end
   end
 
   def show
@@ -33,5 +43,31 @@ class RewardsController < ApplicationController
 
   def new
     @new_reward = Reward.new
+  end
+
+  protected
+
+  def check_points
+    total_points = 0
+
+    user_photos = Photo.where(user_id: current_user.id)
+
+    if user_photos
+      user_photos.each do |photo|
+        photo_points = Interaction.where(['photo_id = ? and message_type = ?', photo.id, 1]).length
+        total_points += photo_points
+      end
+    end
+
+    user_redemptions = Redemption.where(user_id: current_user.id)
+
+    if user_redemptions
+      user_redemptions.each do |redemption|
+        redeemed_points = redemption.reward.required_points
+        total_points -= redeemed_points
+      end
+    end
+
+    @total_points = total_points
   end
 end

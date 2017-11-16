@@ -12,7 +12,7 @@
 
       <%= bootstrap_form_for @new_redemption, :url => rewards_redeem_path, :html => {:method => :post} do |f| %>
         <%= f.hidden_field :reward_id, :value => r.id %>
-        <%= f.submit "Submit", :class => 'btn btn-primary' %>
+        <%= f.submit "Redeem", :class => 'btn btn-primary' %>
       <% end %>
 
     </div>
