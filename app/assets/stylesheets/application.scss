@@ -4,34 +4,33 @@
 body {
   font-family: 'Fira Sans', sans-serif;
   background-color: #fafafa;
-  color: #000000;
+
 }
 
 .navbar.navbar-expand-lg {
   font-family: 'Roboto', sans-serif;
   background-color: #FFE066;
-  color: #000000;
+
 }
 
 .navbar-dark .navbar-toggler {
-    /*color: rgba(255, 255, 255, 0.5);*/
+    color: rgba(255, 255, 255, 0.5);
     border-color: rgba(255, 255, 255, 1);
 }
 
 .navbar a {
   font-family: 'Roboto', sans-serif;
-  color: #000000 !important;
+  // color: !important;
 }
 
 .btn-outline-success {
-    color: #000000;
+
     background-color: #28a745;
     background-image: none;
     border-color: #28a745;
 }
 
 .card {
-  /*box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);*/
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 }
 
@@ -59,7 +58,7 @@ body {
 }
 
 .btn-secondary:not([disabled]):not(.disabled):active, .btn-secondary:not([disabled]):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
-    color: #000;
+
     background-color: #28a745;
     border-color: #28a745;
     -webkit-box-shadow: none;
@@ -67,12 +66,12 @@ body {
 }
 
 .btn-secondary, .btn-secondary:hover {
-    color: #000;
+
     background-color: #28a745;
     border-color: #28a745;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {
-    -webkit-box-shadow: none;
-    box-shadow: none;
+    // -webkit-box-shadow: none;
+    // box-shadow: none;
 }
