@@ -3,7 +3,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse h6" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand h1" href="/">
       <%= cl_image_tag("2c4d4373-96a8-42cb-97b8-df592b2049782_gyjxfd.png", :width=>54, :crop=>"scale") %>
       What's That?!
     </a>
@@ -18,7 +18,7 @@
       <% end %>
     </ul>
 
-    <ul class="navbar-nav mx-auto">
+    <ul class="navbar-nav mx-auto lead">
       <li class="nav-item">
         <%= link_to "New Photo", new_photo_path, :class=>"nav-link"%>
       </li>
@@ -58,6 +58,6 @@
   <% end %>
   <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><%= link_to "Search", brands_path %></button>
+    <button class="btn btn-outline-danger  waves-effect my-2 my-sm-0" type="submit"><%= link_to "Search", brands_path %></button>
   </form>
 </nav>
