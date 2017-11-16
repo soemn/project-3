@@ -69,3 +69,10 @@ end
     photo_link: photo_rewards.sample
   )
 end
+
+5.times do
+  Redemption.create(
+    user_id: User.all.sample.id,
+    reward_id: Reward.all.sample.id
+  )
+end

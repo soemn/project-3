@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :photos
   has_many :brands
   has_many :interactions
+  has_many :redemptions
 end
