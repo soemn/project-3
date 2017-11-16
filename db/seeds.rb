@@ -53,11 +53,7 @@ photo_rewards = [
   )
 end
 
-<<<<<<< HEAD
-15.times do
-=======
 10.times do
->>>>>>> f4c74ff11885e3eeaebabbcd048f3d8c6a171704
   Interaction.create(
     content: Faker::WorldOfWarcraft.quote,
     message_type: [0, 1].sample,
