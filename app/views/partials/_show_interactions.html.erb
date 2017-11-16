@@ -1,15 +1,9 @@
 <% @interactions.each do |i| %>
   <div>
-    Content:
-    <%= i.content %>
-  </div>
-  <div>
-    Type:
-    <%= i.message_type %>
-  </div>
-  <div>
-    User:
-    <%= i.user_id %>
+    <p>
+      <strong><%= i.user.name %>:</strong>
+      <%= i.content %>
+    </p>
   </div>
 <% end %>
 
