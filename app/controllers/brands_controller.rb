@@ -27,7 +27,7 @@ class BrandsController < ApplicationController
       redirect_to brands_path
     else
       redirect_to new_brand_path
-  end
+    end
   end
 
   def show
@@ -39,11 +39,10 @@ class BrandsController < ApplicationController
   end
 
   def test
-    image = "https://www.nike.com/android-icon-128x128.png"
-
+    image = "https://static-cdn.jtvnw.net/jtv_user_pictures/nvidiageforcepl-profile_image-fecc1664bf59135c-300x300.png"
     response = JSON.parse(get_brand(image).body)
-    check_result = JSON.parse(get_brand(image).body)['responses'][0].present?
-    render json: check_result
+    # check_result = JSON.parse(get_brand(image).body)['responses'][0].present?
+    render json: response
   end
 
   protected

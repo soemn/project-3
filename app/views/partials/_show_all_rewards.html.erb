@@ -4,12 +4,19 @@
     <%= cl_image_tag(r.photo_link, class:"card-img-top") %>
     <div class="card-body">
       <h4 class="card-title">
-        Item: <% r.name %>
+        Item: <%= r.name %>
       </h4>
       <p class="card-text">
-        Points Needed: <% r.required_points %>
+        Points Needed: <%= r.required_points %>
       </p>
-      <a href="#" class="btn btn-primary">Redeem</a>
+
+      <%= bootstrap_form_for @new_redemption, :url => rewards_redeem_path, :html => {:method => :post} do |f| %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :required_points, :value => 0 %>
+        <%= f.hidden_field :photo_link, :value => @photo_id %>
+        <%= f.submit "Submit", :class => 'btn btn-primary' %>
+      <% end %>
+
     </div>
   </div>
   <% end %>
