@@ -1,5 +1,5 @@
 class RewardsController < ApplicationController
-  before_action :authenticate_user!, only: %i(new index)
+  before_action :authenticate_user!, only: %i(new)
 
   def index
     @rewards = Reward.all
