@@ -20,6 +20,10 @@ Whats That!? is a ...
 
 ![ERD Diagram](public/ERD.png)
 
+### Link to Application
+
+![What's That?!](https://whats-that.herokuapp.com/)
+
 -**
 
 ### Views
