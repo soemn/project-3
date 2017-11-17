@@ -22,7 +22,7 @@ Whats That!? is a ...
 
 ### Link to Application
 
-![What's That?!](https://whats-that.herokuapp.com/)
+https://whats-that.herokuapp.com/
 
 -**
 
