@@ -49,7 +49,9 @@ class BrandsController < ApplicationController
   end
 
   def test
+
     image = "https://i.pinimg.com/736x/e8/30/04/e830045c365df7abb42bb790f36c464d--captain-america-shoes-marvel-captain-america.jpg"
+
     response = JSON.parse(get_brand(image).body)
     # check_result = JSON.parse(get_brand(image).body)['responses'][0].present?
     render json: response
