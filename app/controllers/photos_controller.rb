@@ -31,7 +31,9 @@ class PhotosController < ApplicationController
     if (check_result.present?)
       response = check_result['logoAnnotations'][0]['description']
       brand = Brand.find_by logo: response
-      brand_id = brand.id
+      if brand
+        brand_id = brand.id
+      end
     end
 
     @new_photo = current_user.photos.create(
