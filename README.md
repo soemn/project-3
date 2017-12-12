@@ -6,6 +6,12 @@ Whats That!? is a platform where we connect our users to actual e-commerce
 websites on a single click and offer rewards to our users which they can redeem
 via a reward points system.
 
+### Team Members
+
+1. [Yuki](https://github.com/yukitsuboniwa)
+2. [Soe Min](https://github.com/soemn)
+3. [William](https://github.com/subutai1175)
+
 ### User Stories
 
 * **User can upload photos**, with title, description, and tag brands on their
@@ -21,13 +27,17 @@ via a reward points system.
 
 #### Brand creation
 
-* Brand registry
+* Brand registry (by admin)
+
+#### Rewards creation
+
+* Reward registry (by admin)
 
 ### ERD Diagram
 
 ![ERD Diagram](public/ERD.png)
 
--\**
+-**
 
 ### Views
 
@@ -42,7 +52,7 @@ via a reward points system.
 * upload page
 * store (to spend points)
 
--\**
+-**
 
 ### Controllers
 
@@ -53,7 +63,7 @@ via a reward points system.
 5. **followers controller**
 6. **users controller** <-- using devise
 
--\**
+-**
 
 #### When user is NOT Logged In
 
@@ -120,17 +130,26 @@ via a reward points system.
 
 ### Wireframes
 
-1. Homepage
+1a. Homepage
 
-![Homepage](public/homepage.png)
+<img src="public/homepage.png" alt="Homepage" style="width: 600px;"/>
 
-![Homepage2](public/Main_Page_Wireframe.png)
+1b. Homepage alternative
 
-![Photo](public/photo.png)
+<img src="public/Main_Page_Wireframe.png" alt="Homepage 2" style="width: 400px;"/>
 
-![Maximize Photo](public/Maximized_Photo_Popup.png)
+2a. Photo page
 
-![Profile](public/Profile_Page_Wireframe.png)
+<img src="public/photo.png" alt="photo wireframe" style="width: 600px;"/>
+
+
+2a. Photo page alternative
+
+<img src="public/Maximized_Photo_Popup.png" alt="photo wireframe 2" style="width: 400px;"/>
+
+Profile page
+
+<img src="public/Profile_Page_Wireframe.png" alt="profile wireframe" style="width: 400px;"/>
 
 ### Application Setup
 
@@ -146,3 +165,6 @@ Set up Database
 rails db:create
 rails db:migrate
 ```
+
+### Stack
+Ruby on Rails, PostgreSQL, ERB
