@@ -35,9 +35,9 @@ via a reward points system.
 
 ### ERD Diagram
 
-![ERD Diagram](public/ERD.png)
+<img src="public/ERD.png" alt="ERD Diagram" width="600"/>
 
--**
+***
 
 ### Views
 
@@ -52,7 +52,7 @@ via a reward points system.
 * upload page
 * store (to spend points)
 
--**
+***
 
 ### Controllers
 
@@ -63,7 +63,7 @@ via a reward points system.
 5. **followers controller**
 6. **users controller** <-- using devise
 
--**
+***
 
 #### When user is NOT Logged In
 
@@ -132,24 +132,24 @@ via a reward points system.
 
 1a. Homepage
 
-<img src="public/homepage.png" alt="Homepage" style="width: 600px;"/>
+<img src="public/homepage.png" alt="Homepage" width="600"/>
 
 1b. Homepage alternative
 
-<img src="public/Main_Page_Wireframe.png" alt="Homepage 2" style="width: 400px;"/>
+<img src="public/Main_Page_Wireframe.png" alt="Homepage 2" width="400"/>
 
 2a. Photo page
 
-<img src="public/photo.png" alt="photo wireframe" style="width: 600px;"/>
+<img src="public/photo.png" alt="photo wireframe" width="600"/>
 
 
 2a. Photo page alternative
 
-<img src="public/Maximized_Photo_Popup.png" alt="photo wireframe 2" style="width: 400px;"/>
+<img src="public/Maximized_Photo_Popup.png" alt="photo wireframe 2" width="400"/>
 
 Profile page
 
-<img src="public/Profile_Page_Wireframe.png" alt="profile wireframe" style="width: 400px;"/>
+<img src="public/Profile_Page_Wireframe.png" alt="profile wireframe" width="400"/>
 
 ### Application Setup
 
